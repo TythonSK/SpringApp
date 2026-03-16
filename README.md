@@ -111,17 +111,20 @@ aws configure
 
 # Create S3 bucket for Terraform state
 aws s3api create-bucket \
-  --bucket terraform-state-spring-boot-app \
-  --region us-east-1
+  --bucket terraform-state-spring-boot-app-kkandra \
+  --region us-east-1 \
+  --profile teraform-deployer
 
 # Enable bucket versioning
 aws s3api put-bucket-versioning \
-  --bucket terraform-state-spring-boot-app \
-  --versioning-configuration Status=Enabled
+  --bucket terraform-state-spring-boot-app-kkandra \
+  --versioning-configuration Status=Enabled \
+  --profile teraform-deployer
 
 # Enable default encryption
 aws s3api put-bucket-encryption \
-  --bucket terraform-state-spring-boot-app \
+  --bucket terraform-state-spring-boot-app-kkandra \
+  --profile teraform-deployer \
   --server-side-encryption-configuration '{
     "Rules": [
       {
