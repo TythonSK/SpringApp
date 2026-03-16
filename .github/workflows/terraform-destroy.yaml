@@ -5,7 +5,7 @@ on:
 
 env:
   AWS_REGION: us-east-1
-  S3_BUCKET: terraform-state-spring-boot-app-kandrak
+  S3_BUCKET: terraform-state-spring-boot-app-kkandra
   ECR_REPOSITORY: spring-boot-app
 
 jobs:
